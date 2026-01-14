@@ -5,7 +5,6 @@
 ### **Golang**
 
 **Konsep yang Dipahami:**
-- Syntax dasar (variables, functions, loops, conditions)
 - Struct dan methods
 - Goroutines untuk concurrent processing
 - Error handling
@@ -65,7 +64,6 @@
 - Queue untuk menyimpan message
 - Publish message
 - Consume message
-- Basic acknowledgment
 
 ## 4. ORM
 
