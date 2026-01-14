@@ -10,7 +10,7 @@
 - Error handling
 - Pointer basics
 - Interface
-- Package management dengan go mod
+- Standard liblary (testing, slices, strings, encoding, dll.)
 
 ## 2. Framework
 
@@ -79,24 +79,23 @@
 
 ## 5. Architecture
 
+### **5.2. Hexagonal Architecture**
+
 **Struktur Folder:**
 ```
+cmd/
+├── app/
+│   └── main.go       → Application entry points
 internal/
-├── domain/
-│   ├── entities/     → Domain models
-│   └── errors/       → Custom errors
-├── ports/
-│   ├── input/        → Use case interfaces
-│   └── output/       → Repository interfaces
-├── adapters/
-│   ├── http/         → HTTP handlers (Fiber)
-│   ├── postgres/     → Database implementation (Ent)
-│   ├── redis/        → Cache implementation
-│   └── rabbitmq/     → Queue implementation
-└── infrastructure/
-    ├── database/     → DB connection setup
-    ├── cache/        → Redis connection
-    └── queue/        → RabbitMQ connection
+├── adapter/          → Adapters (Infrastructure Layer)
+│   ├── handler/      → Primary/Driving adapter
+│   └── msgbroker/    → Message broker adapters
+├── config/           → Application configuration
+├── core/    
+│   ├── domain        → Domain entities and value objects
+│   ├── ports         → Ports (interface)
+│   └── services      → Application services (Use Cases)
+└── pkg/              → Public liblaries
 ```
 
 ### **5.2. Clean Architecture**
